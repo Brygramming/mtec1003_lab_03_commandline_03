@@ -57,15 +57,18 @@ y
 
 What command did you use to find the permissions?
 ----------
-
+ls -la
+copy_to_backup.sh
+drwxr-xr-x   3 bryan.santiago59  ACADEMIC\Domain Users    96 Feb 21 15:48
 
 ==========
-6. Change the permissions so that this file is executable by the user.  Verify the new permissions.
+6. Change the permissions so that this file is executable by the user. Verify the new permissions.
 
 What commands did you use to do this?  What was the output?
 ----------
-
-
+chmod -u+x copy_to_backup.sh
+copy_to_backup.sh
+drwxr-xr-x   3 bryan.santiago59  ACADEMIC\Domain Users    96 Feb 21 15:48
 
 ==========
 7. Try executing the file!
@@ -74,16 +77,14 @@ $ ./copy_to_backup.sh
 
 What command did you use to try to execute the file?  What happens?
 ----------
-
-
+bash: ./copy_to_backup.sh: Permission denied
 
 ==========
 8. Open the file with nano
 
 What command did you use to do this?
 ----------
-
-
+nano copy_to_backup.sh
 
 ==========
 9. In your file, write the commands to do the following
@@ -96,41 +97,50 @@ Don't forget the first line of your shell script! It should begin with #!/bin/ba
 
 Write out the code in your file below...
 ----------
-
-
+Created the directory, but couldn't copy text files.
 
 ==========
 10. Create a directory in your home called test
 ----------
-
-
+Applications		Movies			copy_to_backup.sh
+Desktop			Music			isus
+Documents		Pictures		test
+Downloads		Public
+Library			backup
 
 ==========
 11. Go into that directory and create two empty files... 1.txt and 2.txt
 
 What commands did you use to do this?
 ----------
-
-
+cd test
+touch 1.txt 2.txt
 
 ==========
 12. Move the script that you created into this directory.
 
 What commands did you use to do this?
 ----------
-
-
+cd ..
+mv copy_to_backup.sh test
 
 ==========
 13. Run your script.
 
 What commands did you use to do this?
 ----------
-
-
+It doesn't let me run script, permission is still denied.
 
 ==========
 14. Verify that a backup folder was created in your test directory... with copies of the files present.
 
 What commands did you use to do this?  Show the output.
 ----------
+mv test backup
+ls
+Applications	Downloads	Music		backup
+Desktop		Library		Pictures	isus
+Documents	Movies		Public
+cd backup
+ls
+test
